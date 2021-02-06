@@ -5,6 +5,7 @@ class Point:
     """Represents a point in 2-D space.
 
     attributes: x, y.
+    method: set_coordinate, get, move_to_new, distance_between_points.
     """
 
     def __init__(self):
@@ -14,6 +15,11 @@ class Point:
     def set_coordinate(self, x, y):
         self.x = x
         self.y = y
+
+    def get(self):
+        coordinate = (self.x, self.y)
+        print(coordinate)
+        return coordinate
 
     def move_to_new(self, dx, dy):
         copied_point = copy.deepcopy(self)

@@ -50,16 +50,19 @@ def rect_circle_overlap(cir, rect):
 
 def main():
     circle = Circle()
-    circle.set_center_radius(2.0, -1.0, 1.0)
-    print(circle.cp0.x, circle.cp0.y)
+    circle.set_center_radius(0.0, 0.0, 1.0)
+    circle.cp0.get()
+    circle.cp1.get()
+    circle.cp2.get()
+    circle.cp3.get()
 
-    tested_rect = Rectangle()
-    tested_rect.width = 6.0
-    tested_rect.height = 6.0
-    tested_rect.corner.x = 0.0
-    tested_rect.corner.y = 0.0
+    rect1 = Rectangle()
+    rect1.set_basic(0, 0, 6, 6)
 
-    print(rect_circle_overlap(circle, tested_rect))
+    rect2 = Rectangle()
+    rect2.set_basic(-2, 1, 1, 3)
+
+    print(rect_circle_overlap(circle, rect1))
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
-import copy
 from point import Point
 from rectangle import Rectangle
+from rectangle import point_in_rect
 
 
 class Circle:
@@ -27,25 +27,8 @@ class Circle:
         self.set_center_radius(self.center.x + dx, self.center.y + dy, self.radius)
 
 
-def distance_between_points(p1, p2):
-    distance = ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
-    return distance
-
-
-def move_circle(cir, dx, dy):
-    copied_cir = copy.deepcopy(cir)
-    copied_cir.center.x += dx
-    copied_cir.center.y += dy
-    return copied_cir
-
-
 def point_in_circle(cir, point):
-    return distance_between_points(cir.center, point) <= cir.radius
-
-
-def point_in_rect(rect, point):
-    return rect.corner.x <= point.x <= rect.corner.x + rect.width and rect.corner.y \
-           <= point.y <= rect.corner.y + rect.height
+    return cir.center.distance_between_points(point) <= cir.radius
 
 
 def rect_in_circle(cir, rect):

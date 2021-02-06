@@ -17,3 +17,6 @@ class Point:
         copied_point.x += dx
         copied_point.y += dy
         return copied_point
+
+    def distance_between_points(self, point):
+        return ((self.x - point.x) ** 2 + (self.y - point.y) ** 2) ** 0.5

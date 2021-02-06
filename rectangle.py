@@ -21,3 +21,8 @@ class Rectangle:
     def grow(self, dwidth, dheight):
         self.width += dwidth
         self.height += dheight
+
+
+def point_in_rect(rect, point):
+    return rect.corner.x <= point.x <= rect.corner.x + rect.width and rect.corner.y \
+           <= point.y <= rect.corner.y + rect.height

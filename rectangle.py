@@ -2,7 +2,11 @@ from point import Point
 
 
 class Rectangle:
-    """Represents a rectangle. attributes: width, height, corner."""
+    """Represents a rectangle.
+
+    attributes: width, height, corner.
+    methods: set_basic, move, grow.
+    """
 
     def __init__(self):
         self.corner = Point()

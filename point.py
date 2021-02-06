@@ -2,7 +2,10 @@ import copy
 
 
 class Point:
-    """Represents a point in 2-D space."""
+    """Represents a point in 2-D space.
+
+    attributes: x, y.
+    """
 
     def __init__(self):
         self.x = 0.0

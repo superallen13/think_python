@@ -4,7 +4,11 @@ from rectangle import point_in_rect
 
 
 class Circle:
-    """Represents a circle. attributes: center, radius."""
+    """Represents a circle.
+
+    attributes: center, radius.
+    methods: set_center_radius, move.
+    """
 
     def __init__(self):
         self.center = Point()

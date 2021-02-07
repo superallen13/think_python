@@ -54,24 +54,24 @@ def rect_circle_overlap(cir, rect):
     p1_in_circle = point_in_circle(cir, rect.corner.move_to_new(0, rect.height))
     p2_in_circle = point_in_circle(cir, rect.corner.move_to_new(rect.width, rect.height))
     p3_in_circle = point_in_circle(cir, rect.corner.move_to_new(rect.width, 0))
-    return point_in_rect(rect, cir.cp0) or point_in_rect(rect, cir.cp1) or \
-           point_in_rect(rect, cir.cp2) or point_in_rect(rect, cir.cp3) or \
-           p0_in_circle or p1_in_circle or p2_in_circle or p3_in_circle
+    return \
+        point_in_rect(rect, cir.cp0) or point_in_rect(rect, cir.cp1) or point_in_rect(rect, cir.cp2) or \
+        point_in_rect(rect, cir.cp3) or p0_in_circle or p1_in_circle or p2_in_circle or p3_in_circle
 
 
 def main():
     circle = Circle()
     circle.set_center_radius(0.0, 0.0, 30)
-    circle.cp0.get()
-    circle.cp1.get()
-    circle.cp2.get()
-    circle.cp3.get()
     # circle.draw()
 
     rect = Rectangle()
-    rect.set_basic(6, 8, 16, 26)
+    rect.set_basic(27, 0, 16, 26)
 
-    turtle.goto(circle.center.x, circle.center.y)
+    print(rect_circle_overlap(circle, rect))
+
+    turtle.penup()
+    turtle.goto(circle.center.x, circle.center.y - circle.radius)
+    turtle.pendown()
     turtle.circle(circle.radius)
     turtle.penup()
     turtle.goto(rect.corner.x, rect.corner.y)
@@ -83,6 +83,7 @@ def main():
     turtle.forward(rect.width)
     turtle.left(90)
     turtle.forward(rect.height)
+    turtle.hideturtle()
     turtle.done()
 
 

@@ -59,20 +59,11 @@ def rect_circle_overlap(cir, rect):
         point_in_rect(rect, cir.cp3) or p0_in_circle or p1_in_circle or p2_in_circle or p3_in_circle
 
 
-def main():
-    circle = Circle()
-    circle.set_center_radius(0.0, 0.0, 30)
-    # circle.draw()
-
-    rect = Rectangle()
-    rect.set_basic(27, 0, 16, 26)
-
-    print(rect_circle_overlap(circle, rect))
-
+def draw_cir_rect(cir, rect):
     turtle.penup()
-    turtle.goto(circle.center.x, circle.center.y - circle.radius)
+    turtle.goto(cir.center.x, cir.center.y - cir.radius)
     turtle.pendown()
-    turtle.circle(circle.radius)
+    turtle.circle(cir.radius)
     turtle.penup()
     turtle.goto(rect.corner.x, rect.corner.y)
     turtle.pendown()
@@ -85,6 +76,19 @@ def main():
     turtle.forward(rect.height)
     turtle.hideturtle()
     turtle.done()
+
+
+def main():
+    circle = Circle()
+    circle.set_center_radius(0.0, 0.0, 30)
+    # circle.draw()
+
+    rect = Rectangle()
+    rect.set_basic(27, 0, 16, 26)
+
+    print(rect_circle_overlap(circle, rect))
+
+    draw_cir_rect(circle, rect)
 
 
 if __name__ == '__main__':
